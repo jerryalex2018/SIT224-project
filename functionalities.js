@@ -64,11 +64,11 @@ divthree.innerHTML = `
 `
 let divfour =document.createElement("div")
 divfour.classList.add("div4")
-divfour.innerHTML = `
-<button class="learn-more">${sport.button}</button>
+// divfour.innerHTML = `
+// <button class="learn-more">${sport.button}</button>
 
 
-`
+// `
 
 divmain.append(divEl,divtwo,divthree,)
 articleEl.append(divmain)
