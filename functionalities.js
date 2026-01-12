@@ -70,7 +70,7 @@ divfour.innerHTML = `
 
 `
 
-divmain.append(divEl,divtwo,divthree,divfour)
+divmain.append(divEl,divtwo,divthree,)
 articleEl.append(divmain)
 })
     
