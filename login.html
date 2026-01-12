@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-card {
+      background: #ffffff;
+      width: 350px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .login-card h2 {
+      margin-bottom: 10px;
+      color: #2c5364;
+    }
+
+    .login-card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 13px;
+      color: #2c5364;
+      user-select: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #2c5364;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background: #203a43;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .sports-icons {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+         <ul class="sidebar">
+            <li onclick="closesidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+            <li><a href="index.html">home</a></li>
+            <li><a href="news.html">news</a></li>
+            <li><a href="rugby.html">rugby</a></li>
+            <li><a href="football.html">football</a></li>
+            <li><a href="hookey.html">hookey</a></li>
+            <!-- <li><a href="basketball.html">basketball</a></li>
+            <li><a href="handball.html">handball</a></li>
+            <li><a href="volleyball.html">volleyball</a></li> -->
+            <li><a href="login.html">login</a></li>
+        </ul>
+        <ul>
+            <li><h2 style="text-transform: uppercase; font-family:'Roboto', sans-serif; font-weight: bold; margin-top:10px; padding-left:10px; color:#007ACC;">sport Ibambe</h2></li>
+            <li class="hideOnMobile"><a href="index.html">home</a></li>
+            <li class="hideOnMobile"><a href="news.html">news</a></li>
+            <li class="hideOnMobile"><a href="rugby.html">rugby</a></li>
+            <li class="hideOnMobile"><a href="football.html">football</a></li>
+            <li class="hideOnMobile"><a href="hookey.html">hookey</a></li>
+            <!-- <li class="hideOnMobile"><a href="basketball.html">basketball</a></li>
+            <li class="hideOnMobile"><a href="handball.html">handball</a></li>
+            <li class="hideOnMobile"><a href="volleyball.html">volleyball</a></li> -->
+            <li class="hideOnMobile "><a href="login.html" style="background-color:  #00d4ff;">login</a></li>
+            <li onclick="showsidebar()" class="baga"><a href="#" ><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+    </nav>
+ <div class="login-card">
+    <div class="sports-icons"></div>
+    <h2>Sports Club Login</h2>
+    <p>Welcome back, champion!</p>
+
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter username">
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" placeholder="Enter password">
+        <span class="toggle-password" onclick="togglePassword()">Show</span>
+      </div>
+    </div>
+
+    <button onclick="login()">Login</button>
+
+    <div id="message" class="message"></div>
+  </div>
+    <script src="functionalities.js">
+
+          function togglePassword() {
+      const passwordInput = document.getElementById("password");
+      const toggleText = document.querySelector(".toggle-password");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleText.textContent = "Hide";
+      } else {
+        passwordInput.type = "password";
+        toggleText.textContent = "Show";
+      }
+    }
+
+    function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const message = document.getElementById("message");
+
+      message.style.display = "block";
+
+      if (username === "" || password === "") {
+        message.textContent = " Please fill in all fields.";
+        message.className = "message error";
+        return;
+      }
+
+      // Fake login logic (frontend only)
+      if (username === "player" && password === "sports123") {
+        message.textContent = " Login successful! Welcome to the team.";
+        message.className = "message success";
+      } else {
+        message.textContent = " Invalid login credentials.";
+        message.className = "message error";
+      }
+    }
+
+    </script>
+</body>
+</html>

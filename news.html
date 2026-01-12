@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="styles.css">
+     <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .news-container {
+      max-width: 1200px;
+      margin: auto;
+      background: #f4f7fa;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    .news-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .news-header h1 {
+      color: #203a43;
+      margin-bottom: 5px;
+    }
+
+    .news-header p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    /* FILTER BUTTONS */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .filters button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 20px;
+      background-color: #203a43;
+      color: white;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background-color 0.3s;
+    }
+
+    .filters button:hover {
+      background: #0f2027;
+    }
+
+    /* NEWS GRID */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .news-card .sport {
+      font-size: 12px;
+      font-weight: bold;
+      color: #0a58ca;
+      margin-bottom: 8px;
+    }
+
+    .news-card h3 {
+      color: #203a43;
+      margin-bottom: 10px;
+    }
+
+    .news-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .news-card .date {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+       <nav>
+         <ul class="sidebar">
+            <li onclick="closesidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+            <li><a href="index.html">home</a></li>
+            <li><a href="news.html">news</a></li>
+            <li><a href="rugby.html">rugby</a></li>
+            <li><a href="football.html">football</a></li>
+            <li><a href="hookey.html">hookey</a></li>
+            <!-- <li><a href="basketball.html">basketball</a></li>
+            <li><a href="handball.html">handball</a></li>
+            <li><a href="volleyball.html">volleyball</a></li> -->
+            <li><a href="login.html">login</a></li>
+        </ul>
+        <ul>
+            <li><h2 style="text-transform: uppercase; font-family:'Roboto', sans-serif; font-weight: bold; margin-top:10px; padding-left:10px; color:#007ACC;">sport Ibambe</h2></li>
+            <li class="hideOnMobile"><a href="index.html">home</a></li>
+            <li class="hideOnMobile"><a href="news.html">news</a></li>
+            <li class="hideOnMobile"><a href="rugby.html">rugby</a></li>
+            <li class="hideOnMobile"><a href="football.html">football</a></li>
+            <li class="hideOnMobile"><a href="hookey.html">hookey</a></li>
+            <!-- <li class="hideOnMobile"><a href="basketball.html">basketball</a></li>
+            <li class="hideOnMobile"><a href="handball.html">handball</a></li>
+            <li class="hideOnMobile"><a href="volleyball.html">volleyball</a></li> -->
+            <li class="hideOnMobile "><a href="login.html" style="background-color:  #00d4ff;">login</a></li>
+            <li onclick="showsidebar()" class="baga"><a href="#" ><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+    </nav>
+
+    
+  <div class="news-container">
+
+    <div class="news-header">
+      <h1> Sports News</h1>
+      <p>Latest updates from all our sports teams</p>
+    </div>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filters">
+      <button onclick="filterNews('all')">All</button>
+      <button onclick="filterNews('football')">Football</button>
+      <button onclick="filterNews('rugby')">Rugby</button>
+      <button onclick="filterNews('basketball')">Basketball</button>
+      <button onclick="filterNews('volleyball')">Volleyball</button>
+    </div>
+
+    <!-- NEWS GRID -->
+    <div class="news-grid">
+
+      <div class="news-card football">
+        <div class="sport">FOOTBALL</div>
+        <h3>Football Team Qualifies for Finals</h3>
+        <p>The Ibambe football team secured a decisive win to book a place in the finals.</p>
+        <div class="date">Jan 11, 2026</div>
+      </div>
+
+      <div class="news-card rugby">
+        <div class="sport">RUGBY</div>
+        <h3>Rugby Squad Begins Intensive Training</h3>
+        <p>Coaches have introduced a new high-intensity training program ahead of the season.</p>
+        <div class="date">Jan 9, 2026</div>
+      </div>
+
+      <div class="news-card basketball">
+        <div class="sport">BASKETBALL</div>
+        <h3>Basketball Team Signs New Center</h3>
+        <p>The club has announced the signing of a promising new center.</p>
+        <div class="date">Jan 8, 2026</div>
+      </div>
+
+      <div class="news-card volleyball">
+        <div class="sport">VOLLEYBALL</div>
+        <h3>Volleyball League Fixtures Released</h3>
+        <p>This season’s volleyball fixtures have officially been released.</p>
+        <div class="date">Jan 7, 2026</div>
+      </div>
+
+    </div>
+  </div>
+
+    <script src="functionalities.js">
+           function filterNews(category) {
+      const cards = document.querySelectorAll('.news-card');
+
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.toggle(
+            'hidden',
+            !card.classList.contains(category)
+          );
+        }
+      });
+    }
+    </script>
+</body>
+</html>

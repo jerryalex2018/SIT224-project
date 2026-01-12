@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hookey</title>
+    <link rel="stylesheet" href="styles.css">
+     <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fa;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    /* PAGE TITLE */
+    .page-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .page-header h1 {
+      color: #203a43;
+      margin-bottom: 5px;
+    }
+
+    .page-header p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      color: #0a58ca;
+      margin-bottom: 15px;
+      border-left: 4px solid #0a58ca;
+      padding-left: 10px;
+    }
+
+    section p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* PLAYERS */
+    .players {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .player-card {
+      background: #f4f7fa;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .player-card h3 {
+      color: #203a43;
+      margin-bottom: 5px;
+    }
+
+    .player-card span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* FIXTURES */
+    .fixture {
+      padding: 10px;
+      background: #f4f7fa;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    /* STAFF */
+    .staff {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .staff-card {
+      background: #f4f7fa;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .staff-card h3 {
+      color: #203a43;
+      margin-bottom: 5px;
+    }
+
+    .staff-card span {
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+        <nav>
+         <ul class="sidebar">
+            <li onclick="closesidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+            <li><a href="index.html">home</a></li>
+            <li><a href="news.html">news</a></li>
+            <li><a href="rugby.html">rugby</a></li>
+            <li><a href="football.html">football</a></li>
+            <li><a href="hookey.html">hookey</a></li>
+            <!-- <li><a href="basketball.html">basketball</a></li>
+            <li><a href="handball.html">handball</a></li>
+            <li><a href="volleyball.html">volleyball</a></li> -->
+            <li><a href="login.html">login</a></li>
+        </ul>
+        <ul>
+            <li><h2 style="text-transform: uppercase; font-family:'Roboto', sans-serif; font-weight: bold; margin-top:10px; padding-left:10px; color:#007ACC;">sport Ibambe</h2></li>
+            <li class="hideOnMobile"><a href="index.html">home</a></li>
+            <li class="hideOnMobile"><a href="news.html">news</a></li>
+            <li class="hideOnMobile"><a href="rugby.html">rugby</a></li>
+            <li class="hideOnMobile"><a href="football.html">football</a></li>
+            <li class="hideOnMobile"><a href="hookey.html">hookey</a></li>
+            <!-- <li class="hideOnMobile"><a href="basketball.html">basketball</a></li>
+            <li class="hideOnMobile"><a href="handball.html">handball</a></li>
+            <li class="hideOnMobile"><a href="volleyball.html">volleyball</a></li> -->
+            <li class="hideOnMobile "><a href="login.html" style="background-color:  #00d4ff;">login</a></li>
+            <li onclick="showsidebar()" class="baga"><a href="#" ><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+    </nav>
+    
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="page-header">
+      <h1> Hockey Team</h1>
+      <p>Our players, staff, and match fixtures</p>
+    </div>
+
+    <!-- ABOUT -->
+    <section>
+      <h2>About the Team</h2>
+      <p>
+        The Ibambe Hockey Team represents the institution in inter-college and
+        regional hockey tournaments. The team emphasizes skill, speed,
+        teamwork, and sportsmanship.
+      </p>
+    </section>
+
+    <!-- PLAYERS -->
+    <section>
+      <h2>Squad</h2>
+      <div class="players">
+        <div class="player-card">
+          <h3>#1 Alex Mutiso</h3>
+          <span>Goalkeeper</span>
+        </div>
+
+        <div class="player-card">
+          <h3>#5 Dennis Ouma</h3>
+          <span>Defender</span>
+        </div>
+
+        <div class="player-card">
+          <h3>#8 Brian Kimani</h3>
+          <span>Midfielder</span>
+        </div>
+
+        <div class="player-card">
+          <h3>#11 Eric Mwangi</h3>
+          <span>Forward</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIXTURES -->
+    <section>
+      <h2>Fixtures & Results</h2>
+
+      <div class="fixture">
+        Ibambe HC vs Lakeside HC — <strong>Jan 22, 2026</strong>
+      </div>
+
+      <div class="fixture">
+        Ibambe HC 3 - 2 Eastern HC — <strong>Win</strong>
+      </div>
+    </section>
+
+    <!-- STAFF -->
+    <section>
+      <h2>Coaching & Staff</h2>
+
+      <div class="staff">
+        <div class="staff-card">
+          <h3>Joseph Kariuki</h3>
+          <span>Head Coach</span>
+        </div>
+
+        <div class="staff-card">
+          <h3>Michael Otieno</h3>
+          <span>Assistant Coach</span>
+        </div>
+
+        <div class="staff-card">
+          <h3>David Kibet</h3>
+          <span>Team Manager</span>
+        </div>
+      </div>
+    </section>
+      <footer>
+        <div class="footer-content">
+            <h3 style="color:#FDB913">Contact Info</h3>
+            <p> Our Address: P.O. BOX 136 - 90100, Machakos, Kenya,East Africa</p>
+            <p style="letter-spacing: 3px;">CALL: +254735247939</p>
+            <p>Email:info@mksu.ac.ke</p>
+            
+        <p style="color: #FDB913;">©2025 Machakos University. All Rights</p>
+
+            
+        </div>
+    </footer>
+
+  </div>
+  <script src="functionalities.js"></script>
+</body>
+</html>

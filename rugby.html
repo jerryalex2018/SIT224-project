@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rugby</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         *{
             margin: 0;
             padding:0;
             box-sizing: border-box;
         }
+        body{
+            position: relative;
+        }
         .history{
             background-color: #F1F4F8;
             box-shadow:  0 4px 6px rgba(0, 0, 0, 0.5);
             padding: 30px 30px;
             line-height: 40px;
+            margin: 15px;
+            margin-top: 40px;
         }
         p{
             color: black;
@@ -28,8 +34,37 @@
     </style>
 </head>
 <body>
+        <nav>
+         <ul class="sidebar">
+            <li onclick="closesidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+            <li><a href="index.html">home</a></li>
+            <li><a href="news.html">news</a></li>
+            <li><a href="rugby.html">rugby</a></li>
+            <li><a href="football.html">football</a></li>
+            <li><a href="hookey.html">hookey</a></li>
+            <!-- <li><a href="basketball.html">basketball</a></li>
+            <li><a href="handball.html">handball</a></li>
+            <li><a href="volleyball.html">volleyball</a></li> -->
+            <li><a href="login.html">login</a></li>
+        </ul>
+        <ul>
+            <li><h2 style="text-transform: uppercase; font-family:'Roboto', sans-serif; font-weight: bold; margin-top:10px; padding-left:10px; color:#007ACC;">sport Ibambe</h2></li>
+            <li class="hideOnMobile"><a href="index.html">home</a></li>
+            <li class="hideOnMobile"><a href="news.html">news</a></li>
+            <li class="hideOnMobile"><a href="rugby.html">rugby</a></li>
+            <li class="hideOnMobile"><a href="football.html">football</a></li>
+            <li class="hideOnMobile"><a href="hookey.html">hookey</a></li>
+            <!-- <li class="hideOnMobile"><a href="basketball.html">basketball</a></li>
+            <li class="hideOnMobile"><a href="handball.html">handball</a></li>
+            <li class="hideOnMobile"><a href="volleyball.html">volleyball</a></li> -->
+            <li class="hideOnMobile "><a href="login.html" style="background-color:  #00d4ff;">login</a></li>
+            <li onclick="showsidebar()" class="baga"><a href="#" ><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+    </nav> 
+    <h1 style="text-align: center; color: brown;  ">brief rugby knowlege</h1>
+       
+    
     <article class="history">
-        <h1 style="text-align: center; color: brown;">brief rugby knowlege</h1>
         <p>
             Brute strength, speed, agility and tactical thinking are all elements associated with this full-body, contact sport played by nations around the world. <br> Rugby, which is a variation on football, has been around since the 19th century. <br> The 15-side team attempts to breach the opposing team’s defensive line and score a try in their in-goal area. The game is played with ball-in-hand and by kicking the ball. <br> Passing between players is permitted provided it is thrown sideways or backwards. <br>A rugby game lasts 80 minutes, which is split into two halves of 40 minutes. <br> A rugby team is made up of 15 players in some of the following positions: loose-head prop, hooker, tight-head prop, second-row lock, flanker, scrumhalf, flyhalf, left-wing, inside centre, outside centre, right-wing and fullback.
         </p>
@@ -62,9 +97,22 @@
 </p>
         </p>
     </article>
+    <h2 style="text-align: center; color: brown; font-weight: bold;">Meet Mksu rugby players</h2>
     <section class="rugplayer">
 
     </section>
+      <footer>
+        <div class="footer-content">
+            <h3 style="color:#FDB913">Contact Info</h3>
+            <p> Our Address: P.O. BOX 136 - 90100, Machakos, Kenya,East Africa</p>
+            <p style="letter-spacing: 3px;">CALL: +254735247939</p>
+            <p>Email:info@mksu.ac.ke</p>
+            
+        <p style="color: #FDB913;">©2025 Machakos University. All Rights</p>
+
+            
+        </div>
+    </footer>
     <script src="rugby.js"></script>
 </body>
 </html>
